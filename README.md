@@ -1,141 +1,75 @@
 # AI Career Assistant
 
+AI-powered resume analysis and career alignment system built with Python and Streamlit.
+
+The application analyzes a user's resume against selected career roles, identifies relevant and missing skills, evaluates semantic alignment, measures resume quality, detects experience level, and recommends suitable career paths.
+
+---
+
 ## Features
 
-* Resume upload (PDF support)
-* Role-based analysis (Data Scientist, ML Engineer, Data Analyst)
-* Skill extraction using NLP (SpaCy)
-* Keyword-based skill matching
-* Semantic similarity using TF-IDF & cosine similarity
-* Match score calculation (0–100%)
-* Missing skills identification
-* Smart suggestions for improvement
-* Domain detection (Tech / Non-Tech)
-* Streamlit-based UI
+- Resume upload with PDF support
+- Resume text extraction using PyMuPDF and PyPDF2
+- Multiple career role selection
+- AI/ML skill extraction using predefined skill mappings
+- Keyword-based skill matching
+- Weighted skill matching
+- Semantic similarity using Sentence Transformers
+- Cosine similarity-based semantic analysis
+- Resume match score calculation
+- Matched skills identification
+- Missing skills identification
+- High-priority skill detection
+- Resume quality scoring
+- Experience-level detection
+- Technical profile detection
+- Domain detection
+- Career alignment analysis
+- Career role ranking and recommendations
+- Skill-gap analysis
+- Improvement suggestions
+- Streamlit-based interactive UI
 
 ---
 
-## Setup
+## Supported Career Roles
 
-Install dependencies:
+The application currently supports:
 
-```
-pip install -r requirements.txt
-```
-
-Download SpaCy model:
-
-```
-python -m spacy download en_core_web_sm
-```
-
-Run application:
-
-```
-streamlit run app.py
-```
-
----
-
-## Usage
-
-1. Upload your resume (PDF format)
-2. Select target role:
-
-   * Data Scientist
-   * ML Engineer
-   * Data Analyst
-3. Click **Analyze**
-
----
-
-## Output
-
-* Match Score (percentage)
-* Keyword Match Score
-* Semantic Match Score
-* Matched Skills
-* Missing Skills
-* Suggestions for improvement
-
----
-
-## How It Works
-
-* Extracts resume text using PyMuPDF & PyPDF2
-* Identifies skills using predefined skill mappings
-* Computes:
-
-  * Keyword Match Score
-  * Semantic Match (TF-IDF + cosine similarity)
-* Final Score:
-
-```
-Final Score = (0.6 × Keyword Score) + (0.4 × Semantic Score)
-```
-
----
-
-## Assumptions
-
-* Resume is in PDF format
-* Text extraction works correctly
-* Skills are present in predefined mapping
-* Selected role defines expected skills
-
----
-
-## Limitations
-
-* Limited to predefined roles
-* Rule-based skill extraction
-* Basic semantic matching (TF-IDF)
-* Not using deep learning models
-
----
-
-## Notes
-
-* Very short resumes may give inaccurate results
-* Non-technical resumes may show low scores
-* Semantic score is approximate, not exact AI understanding
-
----
-
-## Example Run
-
-* Role: Data Scientist
-* Match Score: 72%
-* Missing Skills: TensorFlow, Statistics
+- AI/ML Developer
+- AI Engineer
+- Machine Learning Engineer
+- Data Scientist
+- Data Analyst
+- Python Developer
+- Backend Developer
+- Software Developer
 
 ---
 
 ## Tech Stack
 
-* Python
-* Streamlit
-* SpaCy
-* Scikit-learn
-* PyMuPDF
-* PyPDF2
+- Python
+- Streamlit
+- Sentence Transformers
+- Scikit-learn
+- Pandas
+- NumPy
+- PyMuPDF
+- PyPDF2
+- Matplotlib
+- Git & GitHub
 
 ---
 
-## Verification
+## Project Structure
 
-Results verified using:
-
-* UI output (Streamlit dashboard)
-* Debug logs (matched & missing skills)
-
----
-
-## Future Improvements
-
-* Add LLM (GPT) integration
-* Dynamic job role detection
-* Advanced embeddings (BERT/OpenAI)
-* Web deployment
-* Resume scoring dashboard
-
----
+```text
+AI-Career-Assistant/
+│
+├── app.py
+├── model.py
+├── utils.py
+├── style.css
+├── requirements.txt
+└── README.md
